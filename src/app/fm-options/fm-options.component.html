@@ -1,0 +1,20 @@
+<section class="border border-light p-2 m-2 shadow d-inline-block">
+  <div class="btn-group" role="group" disabled="disabled">
+    <ng-container *ngFor="let item of options; let i = index">
+      <input type="radio" class="btn-check" autocomplete="off"
+             [value]="item.value"
+             [name]="name"
+             [id]="name + i"
+             [disabled]="item.disabled"
+             [checked]="item.selected"
+             (click)="onClicked($event)">
+      <label class="btn btn-tiny" [class]="class" [for]="name + i">
+        {{item.label}}
+      </label>
+    </ng-container>
+  </div>
+
+  <pre *ngIf="debug">
+    {{ options | json }}
+  </pre>
+</section>

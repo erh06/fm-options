@@ -1,0 +1,35 @@
+<fm-options
+  name="arabalar1"
+  [(options)]="arabaListem"
+  [(value)]="arabaSecili"
+  (valueChange)="valueOnChange($event)"
+  [forceSelection]="false"
+  [debug]="true">
+</fm-options>
+
+<fm-options
+  name="arabalar2"
+  [(options)]="arabaListem"
+  [(value)]="arabaSecili"
+  (valueChange)="valueOnChange($event)"
+  [forceSelection]="false"
+  [debug]="true">
+</fm-options>
+
+<br />
+
+<section class="mt-4 border d-inline-block">
+  <pre>
+  {{ arabaListem | json }}
+  </pre>
+
+  <button class="btn btn-sm btn-outline-dark"
+          (click)="sadeceMercedesYazsin()">
+    sadece Mercedes Yazsin
+  </button>
+  <button class="btn btn-sm btn-outline-dark ms-2"
+          [disabled]="arabaSecili === ''"
+          (click)="secimiTemizle()">
+    Seçimi Temizle
+  </button>
+</section>
